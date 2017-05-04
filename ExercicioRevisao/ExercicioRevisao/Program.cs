@@ -8,30 +8,37 @@ namespace ExercicioRevisao
 {
     class Program
     {
+        struct Carro
+        {
+            public string modelo;
+            public int pot;
+            public double km;
+        }
         static void Main(string[] args)
         {
-            string modelo, final;
-            int pot, carros;
-            double km;
+            string final;
+            int carros;
+
+            Carro Carro1;
             Console.WriteLine("Número de carros");
             carros = Convert.ToInt32(Console.ReadLine());
 
             for (int i = 0; i < carros; i++)
             {
                 Console.WriteLine("Modelo:");
-                modelo = Console.ReadLine();
+                Carro1.modelo = Console.ReadLine();
                 Console.WriteLine("Quilometragem:");
-                km = Convert.ToDouble(Console.ReadLine());
+                Carro1.km = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Potência:");
-                pot = Convert.ToInt32(Console.ReadLine());
+                Carro1.pot = Convert.ToInt32(Console.ReadLine());
 
-                final = Sub(modelo, km, pot);
+                final = Sub(Carro1.modelo, Carro1.km, Carro1.pot);
 
                 Console.WriteLine(final);
             }
         }
 
-        static string Sub (string modelo, double km, int pot)
+        static string Sub(string modelo, double km, int pot)
         {
             string modsaida, potsaida, final;
 
