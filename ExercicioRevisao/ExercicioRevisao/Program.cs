@@ -13,6 +13,7 @@ namespace ExercicioRevisao
             public string modelo;
             public int pot;
             public double km;
+
         }
         static void Main(string[] args)
         {
@@ -36,9 +37,9 @@ namespace ExercicioRevisao
                 Carro1.pot = Convert.ToInt32(Console.ReadLine());
 
                 final = Sub(Carro1);
-
-                Console.WriteLine(final);
             }
+
+            Console.WriteLine(Carros);
         }
 
         static string Sub(Carro Carro1)
