@@ -20,8 +20,11 @@ namespace ExercicioRevisao
             int carros;
 
             Carro Carro1;
+
             Console.WriteLine("Número de carros");
             carros = Convert.ToInt32(Console.ReadLine());
+
+            Carro[] Carros = new Carro[carros];
 
             for (int i = 0; i < carros; i++)
             {
@@ -32,21 +35,21 @@ namespace ExercicioRevisao
                 Console.WriteLine("Potência:");
                 Carro1.pot = Convert.ToInt32(Console.ReadLine());
 
-                final = Sub(Carro1.modelo, Carro1.km, Carro1.pot);
+                final = Sub(Carro1);
 
                 Console.WriteLine(final);
             }
         }
 
-        static string Sub(string modelo, double km, int pot)
+        static string Sub(Carro Carro1)
         {
             string modsaida, potsaida, final;
 
-            if (km <= 5000)
+            if (Carro1.km <= 5000)
             {
                 modsaida = "Novo";
             }
-            else if (km > 5000 && km <= 30000)
+            else if (Carro1.km > 5000 && Carro1.km <= 30000)
             {
                 modsaida = "Seminovo";
             }
@@ -55,18 +58,18 @@ namespace ExercicioRevisao
                 modsaida = "Velho";
             }
 
-            if (pot > 200)
+            if (Carro1.pot > 200)
             {
                 potsaida = "Potente";
             }
-            else if (pot >= 120 && pot <= 200)
+            else if (Carro1.pot >= 120 && Carro1.pot <= 200)
             {
                 potsaida = "Forte";
             }
             else
                 potsaida = "Popular";
 
-            final = String.Format("{0} - {1} - {2}", modelo, modsaida, potsaida);
+            final = String.Format("{0} - {1} - {2}", Carro1.modelo, modsaida, potsaida);
 
             return final;
         }
