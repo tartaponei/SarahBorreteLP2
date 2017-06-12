@@ -8,71 +8,78 @@ namespace ExercicioRevisao
 {
     class Program
     {
-        struct Carro
+        public struct Carro
         {
             public string modelo;
             public int pot;
             public double km;
-
+            public string placa;
+            public string cor;
+            public string fabricante;
+            public int ano;
         }
+
         static void Main(string[] args)
         {
-            string final;
-            int carros;
-
-            Carro Carro1;
-
-            Console.WriteLine("Número de carros");
-            carros = Convert.ToInt32(Console.ReadLine());
+            int carros = int.Parse(Console.ReadLine());
 
             Carro[] Carros = new Carro[carros];
 
             for (int i = 0; i < carros; i++)
             {
-                Console.WriteLine("Modelo:");
-                Carro1.modelo = Console.ReadLine();
-                Console.WriteLine("Quilometragem:");
-                Carro1.km = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Potência:");
-                Carro1.pot = Convert.ToInt32(Console.ReadLine());
-
-                final = Sub(Carro1);
+                Carros[i].modelo = Console.ReadLine();
+                Carros[i].km = Double.Parse(Console.ReadLine());
+                Carros[i].pot = Int32.Parse(Console.ReadLine());
+                Carros[i].placa = Console.ReadLine();
+                Carros[i].cor = (Console.ReadLine());
+                Carros[i].fabricante = (Console.ReadLine());
+                Carros[i].ano = Int32.Parse(Console.ReadLine());
             }
 
-            Console.WriteLine(Carros);
-        }
+            for (int i = 0; i < carros; i++)
+            {
+                Console.WriteLine(Classificar(Carros[i]));
+            }
+    }
 
-        static string Sub(Carro Carro1)
+        public static string Classificar(Carro c)
         {
-            string modsaida, potsaida, final;
+            string modsaida, potsaida;
 
-            if (Carro1.km <= 5000)
-            {
+            if (c.km <= 5000)
                 modsaida = "Novo";
-            }
-            else if (Carro1.km > 5000 && Carro1.km <= 30000)
-            {
+            else if (c.km > 5000 && c.km <= 30000)
                 modsaida = "Seminovo";
-            }
             else
-            {
                 modsaida = "Velho";
-            }
 
-            if (Carro1.pot > 200)
-            {
+            if (c.pot > 200)
                 potsaida = "Potente";
-            }
-            else if (Carro1.pot >= 120 && Carro1.pot <= 200)
-            {
+            else if (c.pot >= 120 && c.pot <= 200)
                 potsaida = "Forte";
-            }
             else
                 potsaida = "Popular";
 
-            final = String.Format("{0} - {1} - {2}", Carro1.modelo, modsaida, potsaida);
+            return String.Format("{0} - {1} - {2}", c.modelo, modsaida, potsaida);
+        }
 
-            return final;
+        public static void AterarModelo(Carro c)
+        {
+            c.km = Double.Parse(Console.ReadLine());
+        }
+
+        public static void AterarCor(Carro c)
+        {
+            c.cor = Console.ReadLine();
+        }
+
+        public static int CalcularTaxaDeUso(Carro c)
+        {
+            int anoAtual, modsaida;
+
+            anoAtual = Int32.Parse(Console.ReadLine());
+            modsaida = anoAtual - c.ano;
+            return modsaida;
         }
     }
 }
