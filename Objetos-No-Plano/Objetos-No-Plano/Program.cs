@@ -29,6 +29,15 @@ namespace Objetos_No_Plano
                 if (comando == ConsoleKey.RightArrow)
                     obj.MoverParaDireita();
 
+                else if (comando == ConsoleKey.LeftArrow)
+                    obj.MoverParaEsquerda();
+
+                else if (comando == ConsoleKey.UpArrow)
+                    obj.MoverParaCima();
+
+                else if (comando == ConsoleKey.DownArrow)
+                    obj.MoverParaBaixo();
+
                 Console.WriteLine(obj.Coordenadas());
 
                 Console.Write("Digite comando: ");
