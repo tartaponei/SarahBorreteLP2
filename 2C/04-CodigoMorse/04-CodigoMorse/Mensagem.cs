@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodigoMorse
+namespace _04_CodigoMorse
 {
     class Mensagem
     {
@@ -42,7 +42,7 @@ namespace CodigoMorse
                         morse = tab[p];
                     }
                 }
-                
+
                 string cod = morse + " ";
                 codigo += cod;
             }
@@ -54,7 +54,7 @@ namespace CodigoMorse
         {
             string mensagem = "";
             char caracter = ' ';
-                
+
             Console.WriteLine("Mensagem:");
             txt = Console.ReadLine();
 
