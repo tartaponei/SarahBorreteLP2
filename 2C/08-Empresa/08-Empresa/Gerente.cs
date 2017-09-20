@@ -6,29 +6,8 @@ using System.Threading.Tasks;
 
 namespace _08_Empresa
 {
-    class Gerente
+    class Gerente : Funcionario
     {
-        private int numeroRegistro { get; }
-        private string nome { get; set; }
-        private string cpf;
-
-        public string Cpf
-        {
-            get
-            {
-                return cpf;
-            }
-
-            set
-            {
-                if (value.Length == 11)
-                    cpf = value;
-            }
-        }
-
-        private string email { get; set; }
-        private double salario { get; }
-
         private double bonus { get; }
 
         public Gerente(string n, string c, int nr, int b)
