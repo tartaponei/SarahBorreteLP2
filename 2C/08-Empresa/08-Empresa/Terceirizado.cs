@@ -12,11 +12,8 @@ namespace _08_Empresa
 
         private string empresaMatriz { get; }
 
-        public Terceirizado(string n, string c, int nr, string emp)
+        public Terceirizado(string n, string c, int nr, string emp) : base(n, c, nr)
         {
-            nome = n;
-            cpf = c;
-            numeroRegistro = nr;
             empresaMatriz = emp;
         }
     }

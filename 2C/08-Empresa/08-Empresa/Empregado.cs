@@ -10,11 +10,6 @@ namespace _08_Empresa
     {
         private int dataEntrada { get; }
 
-        public Empregado(string n, string c, int nr)
-        {
-            nome = n;
-            cpf = c;
-            numeroRegistro = nr;
-        }
+        public Empregado(string n, string c, int nr) : base(n, c, nr) { }
     }
 }

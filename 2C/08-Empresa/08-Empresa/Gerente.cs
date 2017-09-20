@@ -10,11 +10,8 @@ namespace _08_Empresa
     {
         private double bonus { get; }
 
-        public Gerente(string n, string c, int nr, int b)
+        public Gerente(string n, string c, int nr, double b) : base(n, c, nr)
         {
-            nome = n;
-            cpf = c;
-            numeroRegistro = nr;
             bonus = b;
         }
     }

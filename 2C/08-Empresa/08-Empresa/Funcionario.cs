@@ -28,5 +28,12 @@ namespace _08_Empresa
 
         protected string email { get; set; }
         protected double salario { get; }
+
+        public Funcionario(string n, string c, int nr)
+        {
+            nome = n;
+            cpf = c;
+            numeroRegistro = nr;
+        }
     }
 }
