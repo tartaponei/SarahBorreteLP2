@@ -37,7 +37,7 @@ namespace _05_Produtos
 
         public void Imprimir()
         {
-            Console.WriteLine(String.Format("Produto: {0} - R${1:0.00} - Estoque: {2}", nome, preço, qtdEstoque));
+            Console.WriteLine("Produto: {0} - R${1:0.00} - Estoque: {2}", nome, preço, qtdEstoque);
         }
     }
 }
