@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace _08_Empresa
 {
-    class Terceirizado : Funcionario
+    class Terceirizado : Empregado
     {
-        private int dataEntrada { get; }
-
-        private string empresaMatriz { get; }
+        public string empresaMatriz { get; set; }
 
         public Terceirizado(string n, string c, int nr, string emp) : base(n, c, nr)
         {

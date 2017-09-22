@@ -8,7 +8,7 @@ namespace _08_Empresa
 {
     class Gerente : Funcionario
     {
-        private double bonus { get; }
+        static public double bonus { get; set; }
 
         public Gerente(string n, string c, int nr, double b) : base(n, c, nr)
         {

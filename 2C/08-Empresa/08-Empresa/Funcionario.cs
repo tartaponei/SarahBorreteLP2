@@ -8,8 +8,8 @@ namespace _08_Empresa
 {
     abstract class Funcionario
     {
-        protected int numeroRegistro { get; set; }
-        protected string nome { get; set; }
+        public int numeroRegistro { get; set; }
+        public string nome { get; set; }
         protected string cpf;
 
         public string Cpf
@@ -17,12 +17,6 @@ namespace _08_Empresa
             get
             {
                 return cpf;
-            }
-
-            set
-            {
-                if (value.Length == 11)
-                    cpf = value;
             }
         }
 
@@ -32,8 +26,10 @@ namespace _08_Empresa
         public Funcionario(string n, string c, int nr)
         {
             nome = n;
-            cpf = c;
             numeroRegistro = nr;
+
+            if (c.Length == 11)
+                cpf = c;
         }
     }
 }
