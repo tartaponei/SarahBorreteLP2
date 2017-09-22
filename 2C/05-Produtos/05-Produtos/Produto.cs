@@ -8,11 +8,11 @@ namespace _05_Produtos
 {
     class Produto
     {
-        public int id { get; set; }
-        public string nome { get; set; }
+        public int id { get; private set; }
+        public string nome { get; private set; }
         public double preço { get; set; }
         public string marca { get; set; }
-        public int qtdEstoque { get; set; }
+        public int qtdEstoque { get; private set; }
 
         public Produto (int i, string n, double p)
         {

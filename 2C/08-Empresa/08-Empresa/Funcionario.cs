@@ -18,6 +18,12 @@ namespace _08_Empresa
             {
                 return cpf;
             }
+
+            private set
+            {
+                if (value.Length == 11)
+                    cpf = value;
+            }
         }
 
         protected string email { get; set; }
@@ -27,9 +33,6 @@ namespace _08_Empresa
         {
             nome = n;
             numeroRegistro = nr;
-
-            if (c.Length == 11)
-                cpf = c;
         }
     }
 }
