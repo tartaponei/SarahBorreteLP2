@@ -17,7 +17,7 @@ namespace _05_Produtos
             while (comando1 == 4)
             {
                 Console.WriteLine("1- Novo produto");
-                Console.WriteLine("0 - Sair");
+                Console.WriteLine("0- Sair");
                 comando1 = int.Parse(Console.ReadLine());
 
                 if (comando1 == 1)
