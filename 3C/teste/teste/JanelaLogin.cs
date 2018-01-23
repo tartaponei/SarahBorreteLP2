@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace teste
 {
@@ -19,7 +20,7 @@ namespace teste
 
         private void ContinuarLogin(object sender, EventArgs e)
         {
-
+           
         }
 
         private void SouClienteClick(object sender, EventArgs e)
