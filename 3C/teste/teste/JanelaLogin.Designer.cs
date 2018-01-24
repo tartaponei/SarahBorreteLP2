@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnContinuarLogin = new System.Windows.Forms.Button();
-            this.checkBoxCliente = new System.Windows.Forms.CheckBox();
-            this.checkBoxRevendedor = new System.Windows.Forms.CheckBox();
             this.labelSenha = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
@@ -39,35 +37,13 @@
             // 
             // btnContinuarLogin
             // 
-            this.btnContinuarLogin.Location = new System.Drawing.Point(184, 173);
+            this.btnContinuarLogin.Location = new System.Drawing.Point(184, 124);
             this.btnContinuarLogin.Name = "btnContinuarLogin";
             this.btnContinuarLogin.Size = new System.Drawing.Size(88, 26);
             this.btnContinuarLogin.TabIndex = 0;
             this.btnContinuarLogin.Text = "Continuar";
             this.btnContinuarLogin.UseVisualStyleBackColor = true;
             this.btnContinuarLogin.Click += new System.EventHandler(this.ContinuarLogin);
-            // 
-            // checkBoxCliente
-            // 
-            this.checkBoxCliente.AutoSize = true;
-            this.checkBoxCliente.Location = new System.Drawing.Point(12, 125);
-            this.checkBoxCliente.Name = "checkBoxCliente";
-            this.checkBoxCliente.Size = new System.Drawing.Size(79, 17);
-            this.checkBoxCliente.TabIndex = 1;
-            this.checkBoxCliente.Text = "Sou cliente";
-            this.checkBoxCliente.UseVisualStyleBackColor = true;
-            this.checkBoxCliente.Click += new System.EventHandler(this.SouClienteClick);
-            // 
-            // checkBoxRevendedor
-            // 
-            this.checkBoxRevendedor.AutoSize = true;
-            this.checkBoxRevendedor.Location = new System.Drawing.Point(12, 148);
-            this.checkBoxRevendedor.Name = "checkBoxRevendedor";
-            this.checkBoxRevendedor.Size = new System.Drawing.Size(102, 17);
-            this.checkBoxRevendedor.TabIndex = 2;
-            this.checkBoxRevendedor.Text = "Sou revendedor";
-            this.checkBoxRevendedor.UseVisualStyleBackColor = true;
-            this.checkBoxRevendedor.Click += new System.EventHandler(this.SouRevendedorClick);
             // 
             // labelSenha
             // 
@@ -106,13 +82,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 211);
+            this.ClientSize = new System.Drawing.Size(284, 158);
             this.Controls.Add(this.textBoxSenha);
             this.Controls.Add(this.textBoxUsuario);
             this.Controls.Add(this.labelUsuario);
             this.Controls.Add(this.labelSenha);
-            this.Controls.Add(this.checkBoxRevendedor);
-            this.Controls.Add(this.checkBoxCliente);
             this.Controls.Add(this.btnContinuarLogin);
             this.Name = "JanelaLogin";
             this.Text = "Login";
@@ -124,8 +98,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnContinuarLogin;
-        private System.Windows.Forms.CheckBox checkBoxCliente;
-        private System.Windows.Forms.CheckBox checkBoxRevendedor;
         private System.Windows.Forms.Label labelSenha;
         private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.TextBox textBoxUsuario;

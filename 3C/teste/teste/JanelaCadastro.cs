@@ -20,10 +20,6 @@ namespace teste
 
         private void ContinuarCadastroClick(object sender, EventArgs e)
         {
-            string sobrenome = textBoxSobrenome.Text;
-            string usuario = textBoxNovoUsuario.Text;
-            string senha = textBoxNovaSenha.Text;
-
             SqlCommand cmd = new SqlCommand()
             {
                 Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),

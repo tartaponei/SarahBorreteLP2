@@ -22,15 +22,5 @@ namespace teste
         {
            
         }
-
-        private void SouClienteClick(object sender, EventArgs e)
-        {
-            checkBoxRevendedor.CheckState = CheckState.Unchecked;
-        }
-
-        private void SouRevendedorClick(object sender, EventArgs e)
-        {
-            checkBoxCliente.CheckState = CheckState.Unchecked;
-        }
     }
 }

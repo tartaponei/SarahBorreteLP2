@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JanelaCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaCadastroCliente.Designer.cs">
+      <DependentUpon>JanelaCadastroCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="JanelaConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="JanelaCadastro.resx">
       <DependentUpon>JanelaCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanelaCadastroCliente.resx">
+      <DependentUpon>JanelaCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JanelaConsulta.resx">
       <DependentUpon>JanelaConsulta.cs</DependentUpon>

@@ -17,7 +17,7 @@ namespace teste
             InitializeComponent();
         }
 
-        private void CadastroClick(object sender, EventArgs e)
+        private void CadastroRClick(object sender, EventArgs e)
         {
             JanelaCadastro jc = new JanelaCadastro();
             jc.Show();
@@ -33,6 +33,12 @@ namespace teste
         {
             JanelaConsulta con = new JanelaConsulta();
             con.Show();
+        }
+
+        private void ClickCadastroC(object sender, EventArgs e)
+        {
+            JanelaCadastroCliente jcc = new JanelaCadastroCliente();
+            jcc.Show();
         }
     }
 }

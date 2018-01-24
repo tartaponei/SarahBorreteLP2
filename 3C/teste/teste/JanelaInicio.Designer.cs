@@ -34,8 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnConheca = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnCadastroCliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCadastro
@@ -44,9 +43,9 @@
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(134, 46);
             this.btnCadastro.TabIndex = 1;
-            this.btnCadastro.Text = "Cadastro";
+            this.btnCadastro.Text = "Cadastro de Revendedor";
             this.btnCadastro.UseVisualStyleBackColor = true;
-            this.btnCadastro.Click += new System.EventHandler(this.CadastroClick);
+            this.btnCadastro.Click += new System.EventHandler(this.CadastroRClick);
             // 
             // btnLogin
             // 
@@ -73,9 +72,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.Size = new System.Drawing.Size(121, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Já é cliente nosso?";
+            this.label1.Text = "Já é revendedor nosso?";
             // 
             // label2
             // 
@@ -95,31 +94,22 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Quer comparar os preços?";
             // 
-            // btnConheca
+            // btnCadastroCliente
             // 
-            this.btnConheca.Location = new System.Drawing.Point(481, 168);
-            this.btnConheca.Name = "btnConheca";
-            this.btnConheca.Size = new System.Drawing.Size(134, 46);
-            this.btnConheca.TabIndex = 7;
-            this.btnConheca.Text = "Conheça a loja!";
-            this.btnConheca.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(283, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(332, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Conheça o plano da nossa loja para revendas e seja um revendedor!\r\n";
+            this.btnCadastroCliente.Location = new System.Drawing.Point(185, 168);
+            this.btnCadastroCliente.Name = "btnCadastroCliente";
+            this.btnCadastroCliente.Size = new System.Drawing.Size(134, 46);
+            this.btnCadastroCliente.TabIndex = 7;
+            this.btnCadastroCliente.Text = "Cadastro de Cliente";
+            this.btnCadastroCliente.UseVisualStyleBackColor = true;
+            this.btnCadastroCliente.Click += new System.EventHandler(this.ClickCadastroC);
             // 
             // JanelaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 320);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnConheca);
+            this.ClientSize = new System.Drawing.Size(330, 320);
+            this.Controls.Add(this.btnCadastroCliente);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -141,8 +131,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnConheca;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCadastroCliente;
     }
 }
 
