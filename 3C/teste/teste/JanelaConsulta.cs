@@ -25,8 +25,9 @@ namespace teste
             SqlCommand cmd = new SqlCommand()
             {
                 Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),
-                CommandText = @"SELECT Nome, Quantidade, Preço FROM Perfume WHERE Id = @codigo();"
+                CommandText = @"SELECT Nome, Quantidade, Preço FROM Produto WHERE Id = @codigo();"
             };
+            cmd.Parameters.AddWithValue("codigo", txtBoxCodigo.Text);
 
             cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
