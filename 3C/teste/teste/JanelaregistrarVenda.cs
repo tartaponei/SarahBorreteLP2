@@ -11,37 +11,42 @@ using System.Data.SqlClient;
 
 namespace teste
 {
-    public partial class JanelaLogin : Form
+    public partial class JanelaRegistrarVenda : Form
     {
-        public JanelaLogin()
+        public double total = 0;
+
+        public JanelaRegistrarVenda()
         {
             InitializeComponent();
         }
 
-        private void ContinuarLogin(object sender, EventArgs e)
+        private void ClickAddProd(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand()
             {
                 Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),
-                CommandText = @"SELECT Senha FROM Usuário WHERE Cpf = @cpf();"
+                CommandText = @"SELECT Preço WHERE Id = @codigo();"
             };
-
-            cmd.Parameters.AddWithValue("cpf", textBoxUsuario.Text);
+            cmd.Parameters.AddWithValue("codigo", textBoxCodigo.Text);
 
             cmd.Connection.Open();
+            double preco = 0;
             SqlDataReader reader = cmd.ExecuteReader();
-            string senha = " ";
             if (reader.HasRows)
             {
                 reader.Read();
-                senha = reader.GetString(0);
-
-                if (textBoxSenha.Text == senha)
-                {
-                    JanelaLogada jl = new JanelaLogada();
-                }
+                preco = reader.GetDouble(0);
+                double totalProd = preco * (int.Parse(textBoxQtd.Text));
+                total = total + totalProd;
+                labelTotal.Text = String.Format("R$ {0}", total);
             }
             cmd.Connection.Close();
+        }
+
+        private void ClickFinalizar(object sender, EventArgs e)
+        {
+            JanelaFinalizarCompra jf = new JanelaFinalizarCompra();
+            jf.Show();
         }
     }
 }

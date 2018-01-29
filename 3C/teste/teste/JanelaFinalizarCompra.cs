@@ -11,31 +11,34 @@ using System.Data.SqlClient;
 
 namespace teste
 {
-    public partial class JanelaCadastroCliente : Form
+    public partial class JanelaFinalizarCompra : Form
     {
-        public JanelaCadastroCliente()
+        JanelaRegistrarVenda x = new JanelaRegistrarVenda();
+
+        public JanelaFinalizarCompra()
         {
             InitializeComponent();
         }
 
-        private void ContinuarCadClienteClick(object sender, EventArgs e)
+        private void ClickFinalizar(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand()
             {
                 Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),
-                CommandText = @"INSERT INTO Cliente(Cpf) VALUES(@cpf)();"
+                CommandText = @"INSERT INTO Venda(Descrição, Cpf_Cliente) VALUES(@desc, @cpf-c, @cpf-rev)();"
             };
 
-            cmd.Parameters.AddWithValue("cpf", txtBoxCpf.Text);
+            cmd.Parameters.AddWithValue("desc", textBoxDesc.Text);
+            cmd.Parameters.AddWithValue("cpf-c", textBoxCpf.Text);
 
             cmd.Connection.Open();
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
+        }
 
-            Cadastrado c = new Cadastrado();
-            c.Show();
-
-            this.Close();
+        private void JanelaFinalizarCompra_Load(object sender, EventArgs e)
+        {
+            labelTotal.Text = Convert.ToString(x.total);
         }
     }
 }

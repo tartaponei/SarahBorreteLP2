@@ -59,13 +59,14 @@
             this.labelUsuario.AutoSize = true;
             this.labelUsuario.Location = new System.Drawing.Point(9, 20);
             this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(43, 13);
+            this.labelUsuario.Size = new System.Drawing.Size(27, 13);
             this.labelUsuario.TabIndex = 4;
-            this.labelUsuario.Text = "Usuário";
+            this.labelUsuario.Text = "CPF";
             // 
             // textBoxUsuario
             // 
             this.textBoxUsuario.Location = new System.Drawing.Point(12, 36);
+            this.textBoxUsuario.MaxLength = 11;
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(252, 20);
             this.textBoxUsuario.TabIndex = 5;

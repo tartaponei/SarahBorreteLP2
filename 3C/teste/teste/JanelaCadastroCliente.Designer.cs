@@ -36,7 +36,7 @@
             // txtBoxCpf
             // 
             this.txtBoxCpf.Location = new System.Drawing.Point(12, 34);
-            this.txtBoxCpf.MaxLength = 12;
+            this.txtBoxCpf.MaxLength = 11;
             this.txtBoxCpf.Name = "txtBoxCpf";
             this.txtBoxCpf.Size = new System.Drawing.Size(272, 20);
             this.txtBoxCpf.TabIndex = 0;
