@@ -23,17 +23,15 @@ namespace teste
             SqlCommand cmd = new SqlCommand()
             {
                 Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),
-                CommandText = @"INSERT INTO Cliente(Cpf) VALUES(@cpf)();"
+                CommandText = @"INSERT INTO Cliente(Cpf) VALUES(@cpf);"
             };
 
-            cmd.Parameters.AddWithValue("cpf", txtBoxCpf.Text);
+            cmd.Parameters.AddWithValue("@cpf", txtBoxCpf.Text);
 
             cmd.Connection.Open();
             cmd.ExecuteNonQuery();
+            MessageBox.Show("Cadastrado!");
             cmd.Connection.Close();
-
-            Cadastrado c = new Cadastrado();
-            c.Show();
 
             this.Close();
         }

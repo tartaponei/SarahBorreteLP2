@@ -32,7 +32,7 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.txtBoxNomeProduto = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBoxPreco = new System.Windows.Forms.TextBox();
             this.txtBoxQtd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPrecoProduto = new System.Windows.Forms.Label();
@@ -73,12 +73,12 @@
             this.txtBoxNomeProduto.Size = new System.Drawing.Size(175, 20);
             this.txtBoxNomeProduto.TabIndex = 3;
             // 
-            // textBox2
+            // txtBoxPreco
             // 
-            this.textBox2.Location = new System.Drawing.Point(196, 153);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtBoxPreco.Location = new System.Drawing.Point(196, 153);
+            this.txtBoxPreco.Name = "txtBoxPreco";
+            this.txtBoxPreco.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxPreco.TabIndex = 4;
             // 
             // txtBoxQtd
             // 
@@ -132,7 +132,7 @@
             this.Controls.Add(this.lblPrecoProduto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxQtd);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtBoxPreco);
             this.Controls.Add(this.txtBoxNomeProduto);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.lblCodigo);
@@ -150,7 +150,7 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.TextBox txtBoxNomeProduto;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBoxPreco;
         private System.Windows.Forms.TextBox txtBoxQtd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPrecoProduto;

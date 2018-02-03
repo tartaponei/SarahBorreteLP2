@@ -23,22 +23,24 @@ namespace teste
             SqlCommand cmd = new SqlCommand()
             {
                 Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),
-                CommandText = @"SELECT Senha FROM Usuário WHERE Cpf = @cpf();"
+                CommandText = @"SELECT Senha FROM Usuário WHERE Cpf = @cpf;"
             };
 
-            cmd.Parameters.AddWithValue("cpf", textBoxUsuario.Text);
+            cmd.Parameters.AddWithValue("@cpf", textBoxUsuario.Text);
 
             cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            string senha = " ";
+            string senha;
             if (reader.HasRows)
             {
                 reader.Read();
                 senha = reader.GetString(0);
+                MessageBox.Show("senha do banco =" + senha);
 
                 if (textBoxSenha.Text == senha)
                 {
                     JanelaLogada jl = new JanelaLogada();
+                    jl.Show();
                 }
             }
             cmd.Connection.Close();

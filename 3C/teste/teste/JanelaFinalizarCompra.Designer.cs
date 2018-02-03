@@ -113,7 +113,6 @@
             this.Controls.Add(this.label1);
             this.Name = "JanelaFinalizarCompra";
             this.Text = "Finalizar?";
-            this.Load += new System.EventHandler(this.JanelaFinalizarCompra_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

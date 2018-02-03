@@ -13,8 +13,6 @@ namespace teste
 {
     public partial class JanelaFinalizarCompra : Form
     {
-        JanelaRegistrarVenda x = new JanelaRegistrarVenda();
-
         public JanelaFinalizarCompra()
         {
             InitializeComponent();
@@ -25,20 +23,16 @@ namespace teste
             SqlCommand cmd = new SqlCommand()
             {
                 Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),
-                CommandText = @"INSERT INTO Venda(Descrição, Cpf_Cliente) VALUES(@desc, @cpf-c, @cpf-rev)();"
+                CommandText = @"INSERT INTO Venda(Descrição, Cpf_Cliente) VALUES(@desc, @cpfc);"
             };
 
-            cmd.Parameters.AddWithValue("desc", textBoxDesc.Text);
-            cmd.Parameters.AddWithValue("cpf-c", textBoxCpf.Text);
+            cmd.Parameters.AddWithValue("@desc", textBoxDesc.Text);
+            cmd.Parameters.AddWithValue("@cpfc", textBoxCpf.Text);
 
             cmd.Connection.Open();
             cmd.ExecuteNonQuery();
+            MessageBox.Show("Compra feita com sucesso!");
             cmd.Connection.Close();
-        }
-
-        private void JanelaFinalizarCompra_Load(object sender, EventArgs e)
-        {
-            labelTotal.Text = Convert.ToString(x.total);
         }
     }
 }

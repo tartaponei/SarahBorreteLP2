@@ -20,14 +20,14 @@ namespace teste
 
         private void ClickConsulta(object sender, EventArgs e)
         {
-            int codigo = int.Parse(txtBoxCodigo.Text);
 
             SqlCommand cmd = new SqlCommand()
             {
                 Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),
-                CommandText = @"SELECT Nome, Quantidade, Preço FROM Produto WHERE Id = @codigo();"
+                CommandText = @"SELECT Nome, Quantidade, Preço FROM Produto WHERE Id = @codigo;"
             };
-            cmd.Parameters.AddWithValue("codigo", txtBoxCodigo.Text);
+
+            cmd.Parameters.AddWithValue("@codigo", txtBoxCodigo.Text);
 
             cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
@@ -35,8 +35,8 @@ namespace teste
             {
                 reader.Read();
                 txtBoxNomeProduto.Text = reader["Nome"].ToString();
-                txtBoxNomeProduto.Text = reader["Quantidade"].ToString();
-                txtBoxNomeProduto.Text = reader["Preço"].ToString();
+                txtBoxQtd.Text = reader["Quantidade"].ToString();
+                txtBoxPreco.Text = reader["Preço"].ToString();
             }
             cmd.Connection.Close();
         }

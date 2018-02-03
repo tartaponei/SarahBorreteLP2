@@ -13,7 +13,8 @@ namespace teste
 {
     public partial class JanelaRegistrarVenda : Form
     {
-        public double total = 0;
+        SqlCommand cmd = new SqlCommand();
+        SqlConnection c = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI");
 
         public JanelaRegistrarVenda()
         {
@@ -22,25 +23,28 @@ namespace teste
 
         private void ClickAddProd(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand()
-            {
-                Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),
-                CommandText = @"SELECT Preço WHERE Id = @codigo();"
-            };
-            cmd.Parameters.AddWithValue("codigo", textBoxCodigo.Text);
+            cmd.Connection = c;
+            cmd.Parameters.AddWithValue("@codigo", textBoxCodigo.Text);
+            cmd.Parameters.AddWithValue("@qtd", textBoxQtd.Text);
 
-            cmd.Connection.Open();
-            double preco = 0;
+            c.Open();
+
+            cmd.CommandText = @"SELECT Preço WHERE Id = @codigo;";
+            double preco;
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
                 reader.Read();
                 preco = reader.GetDouble(0);
                 double totalProd = preco * (int.Parse(textBoxQtd.Text));
-                total = total + totalProd;
-                labelTotal.Text = String.Format("R$ {0}", total);
+                Venda.total = Venda.total + totalProd;
+                labelTotal.Text = String.Format("R$ {0}", Venda.total);
             }
-            cmd.Connection.Close();
+
+            cmd.CommandText = @"UPDATE Produto SET Quantidade = @qtd WHERE Id = @codigo;";
+            cmd.ExecuteNonQuery();
+
+            c.Close();
         }
 
         private void ClickFinalizar(object sender, EventArgs e)
