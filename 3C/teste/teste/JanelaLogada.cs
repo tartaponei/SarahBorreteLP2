@@ -25,6 +25,23 @@ namespace teste
 
         private void ClickRegistrarVenda(object sender, EventArgs e)
         {
+            JanelaRegistrarVenda jrv = new JanelaRegistrarVenda();
+            jrv.Show();
+        }
+
+        private void ClickDeletar(object sender, EventArgs e)
+        {
+            JanelaDeletarCliente jdc = new JanelaDeletarCliente();
+            jdc.Show();
+        }
+
+        private void ClickAtualizarEstoque(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClickSeguro(object sender, EventArgs e)
+        {
 
         }
     }

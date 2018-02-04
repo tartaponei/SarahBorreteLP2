@@ -35,6 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnDeletarRevendedor = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCadastro
@@ -104,11 +106,32 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Bem-vindo(a)!";
             // 
+            // btnDeletarRevendedor
+            // 
+            this.btnDeletarRevendedor.Location = new System.Drawing.Point(42, 333);
+            this.btnDeletarRevendedor.Name = "btnDeletarRevendedor";
+            this.btnDeletarRevendedor.Size = new System.Drawing.Size(134, 46);
+            this.btnDeletarRevendedor.TabIndex = 8;
+            this.btnDeletarRevendedor.Text = "Deletar Cadastro";
+            this.btnDeletarRevendedor.UseVisualStyleBackColor = true;
+            this.btnDeletarRevendedor.Click += new System.EventHandler(this.ClickDeletarRevendedor);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(35, 317);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(156, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Quer deixar de ser revendedor?";
+            // 
             // JanelaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(231, 320);
+            this.ClientSize = new System.Drawing.Size(231, 400);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnDeletarRevendedor);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -132,6 +155,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnDeletarRevendedor;
+        private System.Windows.Forms.Label label5;
     }
 }
 

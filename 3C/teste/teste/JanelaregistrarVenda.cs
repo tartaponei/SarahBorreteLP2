@@ -25,23 +25,48 @@ namespace teste
         {
             cmd.Connection = c;
             cmd.Parameters.AddWithValue("@codigo", textBoxCodigo.Text);
-            cmd.Parameters.AddWithValue("@qtd", textBoxQtd.Text);
+           
+            //SELECT
 
             c.Open();
 
-            cmd.CommandText = @"SELECT Preço WHERE Id = @codigo;";
-            double preco;
+            cmd.CommandText = @"SELECT Preço, Quantidade FROM Produtos WHERE Id = @codigo;";
+            int preco;
+            int Qtd;
+            int Qtd2=0;
+           
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
                 reader.Read();
-                preco = reader.GetDouble(0);
+                
+                preco = reader.GetInt32(0);
+                Qtd = reader.GetInt32(1);
+      
                 double totalProd = preco * (int.Parse(textBoxQtd.Text));
-                Venda.total = Venda.total + totalProd;
-                labelTotal.Text = String.Format("R$ {0}", Venda.total);
+                cmd.Parameters.AddWithValue("@qtd", Qtd-int.Parse(textBoxQtd.Text));
+                Qtd2 = Qtd - int.Parse(textBoxQtd.Text);
+               
+                if (Qtd2 < 0)
+                    MessageBox.Show("Não há mais este produto no estoque, Sorry");
+                else
+                {
+                   
+                    Venda.total = Venda.total + totalProd;
+                    MessageBox.Show("Validado");
+                    labelTotal.Text = String.Format("R$ {0}", Venda.total);
+                }
             }
+            c.Close();
 
-            cmd.CommandText = @"UPDATE Produto SET Quantidade = @qtd WHERE Id = @codigo;";
+            cmd.Parameters.AddWithValue("@qtd2", Qtd2 );
+            cmd.Parameters.AddWithValue("@codigo2", textBoxCodigo.Text);
+
+            //UPDATE
+
+            c.Open();
+            
+            cmd.CommandText = @"UPDATE Produtos SET Quantidade = @qtd2 WHERE Id = @codigo2;";
             cmd.ExecuteNonQuery();
 
             c.Close();
@@ -52,5 +77,6 @@ namespace teste
             JanelaFinalizarCompra jf = new JanelaFinalizarCompra();
             jf.Show();
         }
+        
     }
 }

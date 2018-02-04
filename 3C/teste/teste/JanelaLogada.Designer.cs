@@ -31,6 +31,9 @@
             this.btnRegistrarVenda = new System.Windows.Forms.Button();
             this.btnCadastrarCliente = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnDeletarCliente = new System.Windows.Forms.Button();
+            this.btnAdicionarEstoque = new System.Windows.Forms.Button();
+            this.btnSeguro = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRegistrarVenda
@@ -62,11 +65,44 @@
             this.button1.Text = "Colocar Item no Seguro";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // btnDeletarCliente
+            // 
+            this.btnDeletarCliente.Location = new System.Drawing.Point(160, 12);
+            this.btnDeletarCliente.Name = "btnDeletarCliente";
+            this.btnDeletarCliente.Size = new System.Drawing.Size(123, 48);
+            this.btnDeletarCliente.TabIndex = 3;
+            this.btnDeletarCliente.Text = "Deletar Cliente";
+            this.btnDeletarCliente.UseVisualStyleBackColor = true;
+            this.btnDeletarCliente.Click += new System.EventHandler(this.ClickDeletar);
+            // 
+            // btnAdicionarEstoque
+            // 
+            this.btnAdicionarEstoque.Location = new System.Drawing.Point(160, 87);
+            this.btnAdicionarEstoque.Name = "btnAdicionarEstoque";
+            this.btnAdicionarEstoque.Size = new System.Drawing.Size(123, 48);
+            this.btnAdicionarEstoque.TabIndex = 4;
+            this.btnAdicionarEstoque.Text = "Adicionar ao Estoque";
+            this.btnAdicionarEstoque.UseVisualStyleBackColor = true;
+            this.btnAdicionarEstoque.Click += new System.EventHandler(this.ClickAtualizarEstoque);
+            // 
+            // btnSeguro
+            // 
+            this.btnSeguro.Location = new System.Drawing.Point(160, 163);
+            this.btnSeguro.Name = "btnSeguro";
+            this.btnSeguro.Size = new System.Drawing.Size(123, 48);
+            this.btnSeguro.TabIndex = 5;
+            this.btnSeguro.Text = "Colocar/Tirar Item do Seguro";
+            this.btnSeguro.UseVisualStyleBackColor = true;
+            this.btnSeguro.Click += new System.EventHandler(this.ClickSeguro);
+            // 
             // JanelaLogada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 243);
+            this.ClientSize = new System.Drawing.Size(295, 243);
+            this.Controls.Add(this.btnSeguro);
+            this.Controls.Add(this.btnAdicionarEstoque);
+            this.Controls.Add(this.btnDeletarCliente);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCadastrarCliente);
             this.Controls.Add(this.btnRegistrarVenda);
@@ -81,5 +117,8 @@
         private System.Windows.Forms.Button btnRegistrarVenda;
         private System.Windows.Forms.Button btnCadastrarCliente;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDeletarCliente;
+        private System.Windows.Forms.Button btnAdicionarEstoque;
+        private System.Windows.Forms.Button btnSeguro;
     }
 }

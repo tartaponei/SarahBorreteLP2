@@ -11,28 +11,26 @@ using System.Data.SqlClient;
 
 namespace teste
 {
-    public partial class JanelaCadastro : Form
+    public partial class JanelaDeletarCliente : Form
     {
-        public JanelaCadastro()
+        public JanelaDeletarCliente()
         {
             InitializeComponent();
         }
 
-        private void ContinuarCadastroClick(object sender, EventArgs e)
+        private void ClickContinuarDelete(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand()
             {
                 Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),
-                CommandText = @"INSERT INTO Usuario(Nome, Cpf_Revendedor, Senha) VALUES(@nome, @cpf, @senha);"
+                CommandText = @"DELETE FROM Cliente WHERE Cpf = @cpf;"
             };
 
-            cmd.Parameters.AddWithValue("@nome", textBoxNome.Text);
             cmd.Parameters.AddWithValue("@cpf", textBoxCpf.Text);
-            cmd.Parameters.AddWithValue("@senha", textBoxNovaSenha.Text);
 
             cmd.Connection.Open();
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Cadastrado!");
+            MessageBox.Show("Cliente deletado!");
             cmd.Connection.Close();
         }
     }

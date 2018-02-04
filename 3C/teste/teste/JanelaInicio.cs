@@ -40,5 +40,11 @@ namespace teste
             JanelaCadastroCliente jcc = new JanelaCadastroCliente();
             jcc.Show();
         }
+
+        private void ClickDeletarRevendedor(object sender, EventArgs e)
+        {
+            JanelaDeletarRevendedor jdr = new JanelaDeletarRevendedor();
+            jdr.Show();
+        }
     }
 }

@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JanelaAdicionarAoEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaAdicionarAoEstoque.Designer.cs">
+      <DependentUpon>JanelaAdicionarAoEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JanelaAlteraçãoSeguro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaAlteraçãoSeguro.Designer.cs">
+      <DependentUpon>JanelaAlteraçãoSeguro.cs</DependentUpon>
+    </Compile>
     <Compile Include="JanelaCadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +68,18 @@
     </Compile>
     <Compile Include="JanelaConsulta.Designer.cs">
       <DependentUpon>JanelaConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JanelaDeletarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaDeletarCliente.Designer.cs">
+      <DependentUpon>JanelaDeletarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JanelaDeletarRevendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaDeletarRevendedor.Designer.cs">
+      <DependentUpon>JanelaDeletarRevendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="JanelaFinalizarCompra.cs">
       <SubType>Form</SubType>
@@ -96,6 +120,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Venda.cs" />
+    <EmbeddedResource Include="JanelaAdicionarAoEstoque.resx">
+      <DependentUpon>JanelaAdicionarAoEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanelaAlteraçãoSeguro.resx">
+      <DependentUpon>JanelaAlteraçãoSeguro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JanelaCadastro.resx">
       <DependentUpon>JanelaCadastro.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JanelaConsulta.resx">
       <DependentUpon>JanelaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanelaDeletarCliente.resx">
+      <DependentUpon>JanelaDeletarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanelaDeletarRevendedor.resx">
+      <DependentUpon>JanelaDeletarRevendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JanelaFinalizarCompra.resx">
       <DependentUpon>JanelaFinalizarCompra.cs</DependentUpon>

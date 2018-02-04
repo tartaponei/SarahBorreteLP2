@@ -23,7 +23,7 @@ namespace teste
             SqlCommand cmd = new SqlCommand()
             {
                 Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),
-                CommandText = @"SELECT Senha FROM Usuário WHERE Cpf = @cpf;"
+                CommandText = @"SELECT Senha FROM Usuario WHERE Cpf_Revendedor = @cpf;"
             };
 
             cmd.Parameters.AddWithValue("@cpf", textBoxUsuario.Text);
@@ -43,6 +43,9 @@ namespace teste
                     jl.Show();
                 }
             }
+
+            else
+                MessageBox.Show("CPF ou Senha inválidos.");
             cmd.Connection.Close();
         }
     }

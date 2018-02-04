@@ -69,7 +69,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxCpf);
             this.Name = "JanelaCadastroCliente";
-            this.Text = "JanelaCadastroCliente";
+            this.Text = "Cadastro";
             this.ResumeLayout(false);
             this.PerformLayout();
 
