@@ -9,5 +9,7 @@ namespace teste
     public static class Venda
     {
         public static double total = 0;
+        public static int qtd = 0;
+
     }
 }

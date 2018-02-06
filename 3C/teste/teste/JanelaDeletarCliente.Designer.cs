@@ -55,6 +55,7 @@
             // textBoxCpf
             // 
             this.textBoxCpf.Location = new System.Drawing.Point(12, 43);
+            this.textBoxCpf.MaxLength = 11;
             this.textBoxCpf.Name = "textBoxCpf";
             this.textBoxCpf.Size = new System.Drawing.Size(212, 20);
             this.textBoxCpf.TabIndex = 8;

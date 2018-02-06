@@ -37,12 +37,14 @@ namespace teste
 
         private void ClickAtualizarEstoque(object sender, EventArgs e)
         {
-
+            JanelaAdicionarAoEstoque y = new JanelaAdicionarAoEstoque();
+            y.Show();
         }
 
         private void ClickSeguro(object sender, EventArgs e)
         {
-
+            JanelaAlteraçãoSeguro x = new JanelaAlteraçãoSeguro();
+            x.Show();
         }
     }
 }

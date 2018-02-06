@@ -46,6 +46,7 @@ namespace teste
                 double totalProd = preco * (int.Parse(textBoxQtd.Text));
                 cmd.Parameters.AddWithValue("@qtd", Qtd-int.Parse(textBoxQtd.Text));
                 Qtd2 = Qtd - int.Parse(textBoxQtd.Text);
+                Venda.qtd = Venda.qtd + int.Parse(textBoxQtd.Text);
                
                 if (Qtd2 < 0)
                     MessageBox.Show("Não há mais este produto no estoque, Sorry");
@@ -57,20 +58,28 @@ namespace teste
                     labelTotal.Text = String.Format("R$ {0}", Venda.total);
                 }
             }
-            c.Close();
 
-            cmd.Parameters.AddWithValue("@qtd2", Qtd2 );
-            cmd.Parameters.AddWithValue("@codigo2", textBoxCodigo.Text);
+            cmd.Parameters.RemoveAt("@codigo");
+            cmd.Parameters.RemoveAt("@qtd");
+          
+            c.Close();
 
             //UPDATE
 
             c.Open();
+
+            cmd.Parameters.AddWithValue("@qtd2", Qtd2);
+            cmd.Parameters.AddWithValue("@codigo2", textBoxCodigo.Text);
             
             cmd.CommandText = @"UPDATE Produtos SET Quantidade = @qtd2 WHERE Id = @codigo2;";
             cmd.ExecuteNonQuery();
 
+            cmd.Parameters.RemoveAt("@qtd2");
+            cmd.Parameters.RemoveAt("@codigo2");
+
             c.Close();
         }
+
 
         private void ClickFinalizar(object sender, EventArgs e)
         {

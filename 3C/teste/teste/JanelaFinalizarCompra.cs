@@ -13,6 +13,9 @@ namespace teste
 {
     public partial class JanelaFinalizarCompra : Form
     {
+        SqlCommand cmd = new SqlCommand();
+        SqlConnection c = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI");
+
         public JanelaFinalizarCompra()
         {
             InitializeComponent();
@@ -20,19 +23,21 @@ namespace teste
 
         private void ClickFinalizar(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand()
-            {
-                Connection = new SqlConnection("Data Source=localhost; Initial Catalog=Loja_de_cosmeticos; Integrated Security=SSPI"),
-                CommandText = @"INSERT INTO Venda(Descrição, Cpf_Cliente) VALUES(@desc, @cpfc);"
-            };
+            cmd.Connection = c;
+
+            c.Open();
+
+            cmd.CommandText = @"INSERT INTO Venda(Descrição, Cpf_Cliente) VALUES(@desc, @cpfc);";
 
             cmd.Parameters.AddWithValue("@desc", textBoxDesc.Text);
             cmd.Parameters.AddWithValue("@cpfc", textBoxCpf.Text);
 
-            cmd.Connection.Open();
             cmd.ExecuteNonQuery();
             MessageBox.Show("Compra feita com sucesso!");
-            cmd.Connection.Close();
+
+            c.Close();
+
+
         }
     }
 }

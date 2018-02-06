@@ -35,7 +35,6 @@ namespace teste
             {
                 reader.Read();
                 senha = reader.GetString(0);
-                MessageBox.Show("senha do banco =" + senha);
 
                 if (textBoxSenha.Text == senha)
                 {
